@@ -17,8 +17,8 @@ urlpatterns = [
 
     path('portfolio/', views.portfolio, name='portfolio'),
 
-    path('services/', views.service, name='services'),
-    
+    path('service/', views.service, name='services'),
+
     path('starter/', views.starter, name='starter'),
 
 
