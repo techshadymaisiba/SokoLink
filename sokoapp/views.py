@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from sokoapp.models import *
 
 # Create your views here.
@@ -41,6 +41,26 @@ def starter(request):
 def show(request):
     all = Contact.objects.all()
     return render(request, 'show.html', {"all" : all})
+
+def delete(request, id):
+    contactinfo = Contact.objects.get(id=id)
+    contactinfo.delete()
+    return redirect('/show')
+
+def edit(request, id):
+    editcontact = get_object_or_404(Contact, id=id)
+
+    if request.method == 'POST':
+        editcontact.name = request.POST.get('name')
+        editcontact.email = request.POST.get('email')
+        editcontact.subject = request.POST.get('subject')
+        editcontact.message = request.POST.get('message')
+
+        editcontact.save()
+        return redirect('/show')
+    else:
+        return render(request, 'edit.html')
+    
 
 
 

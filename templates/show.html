@@ -17,13 +17,14 @@
     Voluptas, perspiciatis facilis quasi id vero, quam, inventore fugit et at totam ipsa assumenda pariatur sit? Modi voluptas sint dolor vero ipsum rerum libero! Iure quod non expedita eius vitae.
     <br><br>
 
-    <h1>All Contacts</h1>
-    <table>
-        <tr>
+    <h1 class="text-center">All Contacts</h1>
+    <table class="table table-striped table-hover table-bordered">
+        <tr class="table-info">
             <th>Names</th>
             <th>Emails</th>
             <th>Subjects</th>
             <th>Message</th>
+            <th>Action</th>
         </tr>
 
         {% for contact in all %}
@@ -33,6 +34,10 @@
             <td>{{ contact.email }}</td>
             <td>{{ contact.subject }}</td>
             <td>{{ contact.message }}</td>
+            <td>
+                <a href="/edit/{{ contact.id}}" class="btn btn-info"> Edit</a>
+                <a href="/delete/{{ contact.id }}" class="btn btn-danger"> Delete</a>
+            </td>
         </tr>
 
 
