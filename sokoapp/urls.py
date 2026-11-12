@@ -21,6 +21,8 @@ urlpatterns = [
 
     path('starter/', views.starter, name='starter'),
 
+    path('show/', views.show, name='show')
+
 
 
 

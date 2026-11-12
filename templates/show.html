@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+</head>
+<body>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, voluptas soluta voluptates itaque voluptatibus voluptate! Inventore ullam id veniam quos quibusdam error labore, obcaecati accusamus laudantium optio officiis sequi nemo.
+    Ea at alias aut sint facilis pariatur, eum possimus perferendis beatae error accusantium cumque commodi nostrum totam dolorem et ad praesentium sequi. Sit magnam modi quos fuga sed voluptates dicta?
+    Voluptas, perspiciatis facilis quasi id vero, quam, inventore fugit et at totam ipsa assumenda pariatur sit? Modi voluptas sint dolor vero ipsum rerum libero! Iure quod non expedita eius vitae.
+    <br><br>
+
+    <h1>All Contacts</h1>
+    <table>
+        <tr>
+            <th>Names</th>
+            <th>Emails</th>
+            <th>Subjects</th>
+            <th>Message</th>
+        </tr>
+
+        {% for contact in all %}
+
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.subject }}</td>
+            <td>{{ contact.message }}</td>
+        </tr>
+
+
+        {% endfor %}
+
+
+
+    </table>
+       
+</body>
+</html>
