@@ -108,7 +108,7 @@ def login_view(request):
             messages.success(request, "You are now logged in!")
             # Admin
             if user.is_superuser:
-                return redirect('/index')
+                return redirect('/show')
 
             # For Normal Users
             return redirect('/index')
